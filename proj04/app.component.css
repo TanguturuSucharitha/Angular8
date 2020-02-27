@@ -1,0 +1,13 @@
+table, th, td {
+    border: 1px solid black;
+    width: auto;
+    height:10px ;
+  }
+  h2{
+      color:red;
+      text-align: center;
+  }
+  h3{
+      color:palevioletred;
+      text-align:left;
+  }
