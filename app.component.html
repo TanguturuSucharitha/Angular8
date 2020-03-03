@@ -1,5 +1,53 @@
-<app-header></app-header>
-<!-- <app-hello></app-hello>
-<app-pipes-demo></app-pipes-demo> -->
-<app-nav-bar></app-nav-bar>
-<router-outlet></router-outlet>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h2>{{message}}</h2>
+  <h3>Angular {{version}} Topics</h3>
+  <div>
+    Enter topic:
+    <input type="text" placeholder="topicname" #currentTopic/>
+    <button type="button" (click)="addTopic(currentTopic.value)">Add Topic</button> 
+    <button type="button" (click)="searchTopic(currentTopic.value)">SearchTopic</button>
+    <button type="button" (click)="delTopic(currentTopic.value) ">Delete</button> 
+    
+  </div>
+  <br>
+  <table>
+    <thead>
+      <tr>
+      <td>Topic Id</td>
+      <td>Topic Name</td>
+      <td>Action</td>
+      <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i=index; let topic of topics">
+        <td>
+          {{i+1}}
+        </td>
+        <td>
+          {{topic}}
+        </td>
+        <td>
+          <button type="button" (click)="deleteTopic(i)">Delete</button>
+        </td>
+        <td>
+          <button type="button" (click)="editTopic(i)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan=4> No.of Topics:{{topics.length}}</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
